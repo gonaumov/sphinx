@@ -1,0 +1,40 @@
+<input type="hidden" #answer [value]="defaultValue" />
+{{answer.value}}
+<ng-container [ngSwitch]="answer.value">
+  <div class="card-container" *ngSwitchCase="defaultValue">
+    <img src="../../assets/images/sphinx.png"/>
+    Пред теб стои тиванският сфинкс. Пазачът, ангелът на смъртта, който удушва всекиго в желязната си прегръдка. Поставен съм тук от богинята Хера и задавам гатанки.  Сега ще ти поставя загадката си. Ако не я отгатнеш
+    ще те убия на място. Ако я отгатнеш ще ти се покажа в
+    друга форма а и друго може да посвършим ...
+    Ето я загадката:
+    <p>
+      Същество едно има, с крайници
+      на брой два, четири или три.
+      По земята, във въздуха и морето
+      никой друг като него не умее да се мени.
+      Най-бавно е и най-малка сила има,
+      когато на всичките си крайници се довери.
+    </p>
+  </div>
+  <div class="card-container" *ngSwitchCase="rightAnswer">
+    <img src="../../assets/images/sexy-sphinx.jpg"/>
+    Браво. Ти си вторият човек за две хиляди години,
+    който успя да ми отговори.
+    Явно трябва да сменя загадката, но пък така
+    има тръпка.
+  </div>
+  <div class="card-container" *ngSwitchDefault>
+    <img src="../../assets/images/sphinx.png"/>
+    Аз поразявам по-бързо и от смъртта.
+    Никога няма да напуснеш това място, ако не решиш загадката ми.
+    Пробвай пак, вместо да те убивам ...
+  </div>
+</ng-container>
+<div class="card-container">
+  <div class="card card-small" tabindex="0">
+    <input type="text" #guess/>
+  </div>
+  <div class="card card-small" tabindex="0">
+    <input type="button" value="Отговори" (click)="answer.value = convertValue(guess.value)"/>
+  </div>
+</div>
