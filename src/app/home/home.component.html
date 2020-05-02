@@ -30,7 +30,7 @@
   </div>
 </ng-container>
 <div class="card-container">
-  <form ngNativeValidate (submit)="$event.preventDefault(); riddleState.value = getRiddleState(guess.value.trim().toLocaleUpperCase())">
+  <form ngNativeValidate (submit)="$event.preventDefault(); riddleState.value = getRiddleState(guess.value.trim().toLocaleLowerCase())">
     <div class="card card-small" tabindex="0">
       <input type="text" #guess required/>
     </div>
