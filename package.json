@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-	"generate": "ng build --prod --output-path docs --base-href \"https://gonaumov.github.io/sphinx/\""
+    "generate": "ng build --prod --output-path docs --base-href \"https://gonaumov.github.io/sphinx/\""
   },
   "private": true,
   "dependencies": {
