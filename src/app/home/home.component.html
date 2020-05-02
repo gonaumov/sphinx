@@ -1,6 +1,6 @@
-<input type="hidden" #answer [value]="defaultValue" />
-<ng-container [ngSwitch]="answer.value">
-  <div class="card-container" *ngSwitchCase="defaultValue">
+<input type="hidden" #riddleState [value]="riddleState" />
+<ng-container [ngSwitch]="riddleState.value">
+  <div class="card-container" *ngSwitchCase="riddleState">
     <img src="assets/images/sphinx.png"/>
     Пред теб стои тиванският сфинкс. Пазачът, ангелът на смъртта, който удушва всекиго в желязната си прегръдка. Поставен съм тук от богинята Хера и задавам гатанки.  Сега ще ти поставя загадката си. Ако не я отгатнеш
     ще те убия на място. Ако я отгатнеш ще ти се покажа в
@@ -15,7 +15,7 @@
       когато на всичките си крайници се довери.
     </p>
   </div>
-  <div class="card-container" *ngSwitchCase="rightAnswer">
+  <div class="card-container" *ngSwitchCase="'correct'">
     <img src="assets/images/sexy-sphinx.jpg"/>
     Браво. Ти си вторият човек за две хиляди години,
     който успя да ми отговори.
@@ -34,6 +34,6 @@
     <input type="text" #guess/>
   </div>
   <div class="card card-small" tabindex="0">
-    <input type="button" value="Отговори" (click)="answer.value = convertValue(guess.value)"/>
+    <input type="button" value="Отговори" (click)="riddleState.value = getRiddleState(guess.value.trim().toLocaleLowerCase())"/>
   </div>
 </div>
