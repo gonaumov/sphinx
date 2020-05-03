@@ -22,7 +22,6 @@
         когато на всичките си крайници се довери.
       </p>
     </div>
-
   </div>
   <div class="card-container" *ngSwitchCase="'correct'">
     <img src="assets/images/sexy-sphinx.jpg"/>
@@ -38,13 +37,15 @@
     Пробвай пак, вместо да те убивам ...
   </div>
 </ng-container>
-<div class="card-container">
   <form ngNativeValidate (submit)="$event.preventDefault(); riddleState.value = getRiddleState(guess.value.trim().toLocaleLowerCase())">
-    <div class="card card-small" tabindex="0">
-      <input type="text" #guess required/>
+    <div class="form-row align-items-center">
+    <div class="col-auto form-group">
+      <input type="text" class="form-control" #guess required/>
     </div>
-    <div class="card card-small" tabindex="0">
-      <input type="submit" value="Отговори"/>
     </div>
+    <div class="form-row justify-content-center">
+    <div class="col-auto form-group text-center">
+      <input class="btn btn-outline-primary" type="submit" value="Отговори"/>
+    </div>
+  </div>
   </form>
-</div>
