@@ -2,18 +2,26 @@
 <ng-container [ngSwitch]="riddleState.value">
   <div class="card-container" *ngSwitchCase="riddleState">
     <img src="assets/images/sphinx.png"/>
-    Пред теб стои тиванският сфинкс. Пазачът, ангелът на смъртта, който удушва всекиго в желязната си прегръдка. Поставен съм тук от богинята Хера и задавам гатанки.  Сега ще ти поставя загадката си. Ако не я отгатнеш
-    ще те убия на място. Ако я отгатнеш ще ти се покажа в
-    друга форма а и друго може да посвършим ...
-    Ето я загадката:
-    <p>
-      Същество едно има, с крайници
-      на брой два, четири или три.
-      По земята, във въздуха и морето
-      никой друг като него не умее да се мени.
-      Най-бавно е и най-малка сила има,
-      когато на всичките си крайници се довери.
-    </p>
+    <div class="container-riddle-text">
+      Пред теб стои тиванският сфинкс. 
+      Пазачът, Ангелът на Смъртта, който удушава всекиго в желязната си прегръдка. 
+      <p>Поставен съм тук от богинята Хера и задавам гатанки.</p>
+      <p>Сега ще ти поставя загадката си.</p>
+      <p>Ако не я отгатнеш,
+        ще те убия на място. 
+        Ако я отгатнеш, ще ти се покажа в
+        друга форма, а и друго може да посвършим ...</p>
+      <p>Ето я загадката:</p>
+      <br>
+      <p class="riddle-text">
+        Същество едно има, с крайници
+        на брой два, четири или три.
+        По земята, във въздуха и морето
+        никой друг като него не умее да се мени.
+        Най-бавно е и най-малка сила има,
+        когато на всичките си крайници се довери.
+      </p>
+    </div>
   </div>
   <div class="card-container" *ngSwitchCase="'correct'">
     <img src="assets/images/sexy-sphinx.jpg"/>
@@ -29,13 +37,15 @@
     Пробвай пак, вместо да те убивам ...
   </div>
 </ng-container>
-<div class="card-container">
   <form ngNativeValidate (submit)="$event.preventDefault(); riddleState.value = getRiddleState(guess.value.trim().toLocaleLowerCase())">
-    <div class="card card-small" tabindex="0">
-      <input type="text" #guess required/>
+    <div class="form-row align-items-center">
+    <div class="col-auto form-group">
+      <input type="text" class="form-control" #guess required/>
     </div>
-    <div class="card card-small" tabindex="0">
-      <input type="submit" value="Отговори"/>
     </div>
+    <div class="form-row justify-content-center">
+    <div class="col-auto form-group text-center">
+      <input class="btn btn-outline-primary" type="submit" value="Отговори"/>
+    </div>
+  </div>
   </form>
-</div>

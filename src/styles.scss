@@ -33,9 +33,11 @@ p {
 
 .toolbar {
   height: 60px;
-  margin: -8px;
+  //margin: -8px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding-left: 3%;
   a {
     margin: 0 16px 0 0;
   }
@@ -96,7 +98,7 @@ svg.material-icons:not(:last-child) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 16px;
+  margin-top: 35px;
 }
 
 .card {
@@ -282,3 +284,6 @@ svg#clouds {
     visibility: hidden;
   }
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
